@@ -18,6 +18,7 @@ html {
     font-size: 62.5%;
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
+    color: var(--primary-dark-color);
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     background-color: var(--primary-dark-color);
 }
 
+/*=================================== Menu */
 .menu {
     position: fixed;
     top: -10rem;
@@ -36,7 +38,9 @@ body {
     background-color: var(--secondary-color);
     border-radius: 50%;
     transition: transform var(--transition-time) ease;
+    z-index: 100;
 }
+
 
 .container.active .menu {
     transform: rotate(-90deg);
@@ -68,6 +72,60 @@ body {
     outline: none;
 }
 
+/*======================== Content */
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-light-color);
+    z-index: 10;
+    transform-origin: left top;
+    transition: transform var(--transition-time) ease;
+}
+
+.container.active .content {
+    transform: rotate(-17deg);
+}
+
+.content-inner {
+    margin: 0 auto;
+    max-width: 120rem;
+    font-size: 1.6rem;
+    padding: 8rem 1rem;
+}
+
+.content-inner__header {
+    margin: 2rem 0;
+    font-size: 3rem;
+}
+
+.content-inner__header--small {
+    margin: 2rem 0;
+    font-size: 2.4rem;
+}
+
+.content-inner__paragraph {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    line-height: 1.8;
+
+}
+
+.content-inner__author {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.content-inner__img {
+    width: 100%;
+}
+
+/* ======================== Navigation */
 .navigation {
     font-size: 2rem;
     color: var(--primary-light-color);
@@ -77,6 +135,7 @@ body {
     transform: translateX(-20rem);
     opacity: 0;
     transition: transform var(--transition-time) ease, opacity var(--transition-time) ease;
+    z-index: 0;
 }
 
 .container.active .navigation {
