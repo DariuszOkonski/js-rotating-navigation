@@ -21,9 +21,47 @@ html {
 
 body {
     width: 100vw;
-    min-height: 100vh;
+    min-height: 200vh;
+    overflow-x: hidden;
     background-color: var(--primary-dark-color);
 }
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: transform var(--transition-time) ease;
+}
+
+.container.active .menu {
+    transform: rotate(-90deg);
+}
+
+.menu__open {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu__close {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    transform: translate(50%, -50%);
+}
+
+.btn {
+    font-size: 3rem;
+}
+
+
+
+
 
 .navigation {
     font-size: 2rem;
